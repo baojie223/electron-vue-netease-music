@@ -1,16 +1,12 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+    home
+    <router-link to="/about">about</router-link>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  name: 'home'
 }
 </script>

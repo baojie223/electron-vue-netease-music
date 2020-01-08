@@ -1,32 +1,38 @@
 <template>
   <div class="header">
-    <a-icon type="close" @click="close" />
-    <a-icon type="border" @click="max" />
-    <a-icon type="minus" @click="min" />
+    <Control class="no-drag" />
+    <Move class="no-drag" />
+    <Avatar class="no-drag" />
   </div>
 </template>
 
 <script>
-import { ipcRenderer } from 'electron'
+import Control from './Control'
+import Move from './Move'
+import Avatar from './Avatar'
 export default {
   name: '',
-  methods: {
-    close() {
-      ipcRenderer.send('close')
-    },
-    max() {
-      ipcRenderer.send('max')
-    },
-    min() {
-      ipcRenderer.send('min')
-    }
+  data() {
+    return {}
+  },
+  components: {
+    Control,
+    Move,
+    Avatar
   }
 }
 </script>
 
 <style lang="less" scoped>
 .header {
-  height: 60px;
-  background-color: red;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  // background-color: @primary-color;
+  -webkit-app-region: drag;
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
 }
 </style>

@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "electron:build": "vue-cli-service electron:build",
+    "e:build": "vue-cli-service electron:build",
     "e:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
@@ -31,6 +31,8 @@
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.0",
     "electron": "6.0.0",
+    "electron-drag": "^1.2.2",
+    "electron-rebuild": "^1.8.8",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",

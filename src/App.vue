@@ -5,5 +5,7 @@
 </template>
 
 <style lang="less">
-
+#app {
+  border-radius: @border-radius-base;
+}
 </style>
