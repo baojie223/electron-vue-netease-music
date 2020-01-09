@@ -6,6 +6,6 @@
 
 <style lang="less">
 #app {
-  border-radius: @border-radius-base;
+  height: 100%;
 }
 </style>
