@@ -13,35 +13,45 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { Howl } from 'howler'
-export default {
+export default Vue.extend({
   name: '',
   data() {
     return {
-      status: 'play',
-      player: null,
-      playId: void 0
+      status: 'timeout',
+      player: new Howl({src: []}),
+      playId: 0
     }
   },
   created() {
     this.player = new Howl({
-      src: ['http://m8.music.126.net/20200110180542/508bb667853ad077eb9435a63208ccd3/ymusic/5109/020e/0e59/fca15439665dfdc220ee93ffcb380747.flac']
+      src: [
+        'http://m8.music.126.net/20200114003303/72b000217839b3b9bed9e822b2f4df44/ymusic/d93e/90a4/1a13/2030d049dbfa5bff413b66c76574d4c2.flac'
+      ]
     })
   },
   methods: {
-    toggle() {
+    toggle(): void {
+      console.log(this.status)
       if (this.status === 'play') {
         this.player.pause(this.playId)
         this.status = 'timeout'
+        return
       }
       if (this.status === 'timeout') {
-        this.playId = this.player.play()
+        if (this.playId) {
+          this.player.play(this.playId)
+        } else {
+          this.playId = this.player.play()
+        }
         this.status = 'play'
+        return
       }
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

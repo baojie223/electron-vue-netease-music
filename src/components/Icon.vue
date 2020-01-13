@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { VueConstructor } from 'vue'
+import Vue, { VueConstructor, VNode, Component } from 'vue'
 import { Icon } from 'ant-design-vue'
 const IconFont: any = Icon.createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_1535173_tm7va4lzlzp.js'
