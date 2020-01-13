@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
-<style lang="less">
-#app {
-  height: 100%;
-}
-</style>
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  name: 'app'
+})
+</script>
+

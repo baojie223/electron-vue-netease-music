@@ -1,12 +1,5 @@
 <template>
   <div class="home">
-    home
-    <router-link to="/about">about</router-link>
+    <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
-
-<script>
-export default {
-  name: 'home'
-}
-</script>

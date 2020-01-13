@@ -1,4 +1,4 @@
-# my-ev
+# electron-vue-typescript
 
 ## Project setup
 ```
@@ -15,14 +15,19 @@ npm run serve
 npm run build
 ```
 
-### Run your unit tests
+### Run your tests
 ```
-npm run test:unit
+npm run test
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Run your unit tests
+```
+npm run test:unit
 ```
 
 ### Customize configuration
