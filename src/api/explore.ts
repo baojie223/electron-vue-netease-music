@@ -4,6 +4,10 @@ export const recommendSongs = () => {
   return request.get('/recommend/songs')
 }
 
-export const like = () => {
-  return request.get('/like')
+export const like = (params: { id: string, like: boolean, alg: string }) => {
+  return request({
+    url: '/like',
+    method: 'GET',
+    params
+  })
 }

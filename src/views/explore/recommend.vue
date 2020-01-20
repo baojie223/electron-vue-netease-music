@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <List :data="songs" />
+  <div style="height: 500px">
+    <List :data="songs" @update="fetchDate" />
   </div>
 </template>
 
@@ -18,14 +18,18 @@ export default {
     }
   },
   created() {
-    recommendSongs().then(res => {
-      console.log(res)
-      this.songs = res.recommend || []
-    })
+    this.fetchDate()
+  },
+  methods: {
+    fetchDate() {
+      recommendSongs().then(res => {
+        console.log(res)
+        this.songs = res.recommend || []
+      })
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
-
 </style>

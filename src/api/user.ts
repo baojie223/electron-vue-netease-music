@@ -12,3 +12,7 @@ export const login = (params: any) => {
 export const logout = () => {
   return request.get('/logout')
 }
+
+export const loginStatus = () => {
+  return request.get('/login/status')
+}

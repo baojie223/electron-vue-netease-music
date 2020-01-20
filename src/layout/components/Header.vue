@@ -29,6 +29,7 @@ export default Vue.extend({
 
 <style lang="less" scoped>
 .header {
+  flex: none;
   display: flex;
   align-items: center;
   height: 48px;

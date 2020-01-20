@@ -14,6 +14,9 @@
   },
   "main": "background.js",
   "dependencies": {
+    "@better-scroll/core": "^2.0.0-beta.4",
+    "@better-scroll/mouse-wheel": "^2.0.0-beta.4",
+    "@better-scroll/scroll-bar": "^2.0.0-beta.4",
     "ant-design-vue": "^1.4.10",
     "axios": "^0.19.1",
     "core-js": "^3.4.4",

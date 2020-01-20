@@ -6,7 +6,8 @@
     </div>
     <a-dropdown v-else class="on" :trigger="['click']">
       <a class="ant-dropdown-link" href="#">
-        <a-avatar icon="user" size="small" />
+        <a-avatar v-if="Object.keys(profile).length" :src="profile.profile.avatarUrl" size="small" />
+        <a-avatar v-else icon="user" />
         <span style="margin-left: 8px">{{ profile.profile.nickname }}</span>
         <a-icon type="down" />
       </a>
