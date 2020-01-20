@@ -6,9 +6,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import { ipcRenderer } from 'electron'
-export default {
+export default Vue.extend({
   name: '',
   methods: {
     close() {
@@ -21,7 +22,7 @@ export default {
       ipcRenderer.send('min')
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

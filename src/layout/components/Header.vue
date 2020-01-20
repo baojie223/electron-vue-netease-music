@@ -7,11 +7,12 @@
   </div>
 </template>
 
-<script>
-import Control from './Control'
-import Move from './Move'
-import Avatar from './Avatar'
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import Control from './Control.vue'
+import Move from './Move.vue'
+import Avatar from './Avatar.vue'
+export default Vue.extend({
   name: '',
   components: {
     Control,
@@ -23,7 +24,7 @@ export default {
       location.reload()
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>
@@ -32,7 +33,7 @@ export default {
   align-items: center;
   height: 48px;
   padding: 0 16px;
-  border-bottom: 1px solid rgba(0,0,0,.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   // background-color: @primary-color;
   -webkit-app-region: drag;
   .no-drag {

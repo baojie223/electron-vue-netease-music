@@ -13,27 +13,32 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
+import { mapState } from 'vuex'
 import { Howl } from 'howler'
-export default Vue.extend({
+export default {
   name: '',
   data() {
     return {
       status: 'timeout',
-      player: new Howl({src: []}),
+      player: null,
       playId: 0
     }
   },
+  computed: {
+    ...mapState('user', ['profile'])
+  },
   created() {
-    this.player = new Howl({
+    console.log(this.profile)
+    const player = new Howl({
       src: [
         'http://m8.music.126.net/20200114003303/72b000217839b3b9bed9e822b2f4df44/ymusic/d93e/90a4/1a13/2030d049dbfa5bff413b66c76574d4c2.flac'
       ]
     })
+    this.$set(this, 'player', player)
   },
   methods: {
-    toggle(): void {
+    toggle() {
       console.log(this.status)
       if (this.status === 'play') {
         this.player.pause(this.playId)
@@ -51,7 +56,7 @@ export default Vue.extend({
       }
     }
   }
-})
+}
 </script>
 
 <style lang="less" scoped>

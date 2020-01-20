@@ -6,18 +6,19 @@
       :defaultSelectedKeys="['发现音乐']"
       :inlineIndent="16"
       mode="inline"
+      @click="clickMenu"
     >
       <a-sub-menu key="推荐">
         <span slot="title">
           <span>推荐</span>
         </span>
-        <a-menu-item key="发现音乐">
+        <a-menu-item key="/explore">
           <div style="display: flex; align-items: center;">
             <Icon t="iconchild" style="font-size: 24px" />
             <span>发现音乐</span>
           </div>
         </a-menu-item>
-        <a-menu-item key="私人FM">
+        <a-menu-item key="/fm">
           <div style="display: flex; align-items: center;">
             <Icon t="iconvoiceprint" style="font-size: 24px" />
             <span>私人FM</span>
@@ -44,7 +45,11 @@ export default {
   data() {
     return {}
   },
-  methods: {}
+  methods: {
+    clickMenu({ key }) {
+      this.$router.push(key)
+    }
+  }
 }
 </script>
 
