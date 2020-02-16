@@ -11,3 +11,11 @@ export const like = (params: { id: string, like: boolean, alg: string }) => {
     params
   })
 }
+
+export const songUrl = (id: string) => {
+  return request({
+    url: '/song/url',
+    method: 'GET',
+    params: { id }
+  })
+}

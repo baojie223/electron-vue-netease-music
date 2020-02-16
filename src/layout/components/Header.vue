@@ -20,7 +20,8 @@ export default Vue.extend({
     Avatar
   },
   methods: {
-    refresh() {
+    refresh(): void {
+      const a: string = ''
       location.reload()
     }
   }

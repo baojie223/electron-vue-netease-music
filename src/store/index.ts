@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex, { StoreOptions } from 'vuex'
 import { user } from './modules/user'
+import { music } from './modules/music'
 import getters from './getters'
 
 Vue.use(Vuex)
@@ -17,7 +18,8 @@ const store: StoreOptions<RootState> = {
   state,
   // getters,
   modules: {
-    user
+    user,
+    music
   }
 }
 

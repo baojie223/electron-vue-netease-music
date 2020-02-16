@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { songUrl } from '@/api/explore'
+import { mapGetters } from 'vuex'
 import { Howl } from 'howler'
 export default {
   name: '',
@@ -26,18 +27,35 @@ export default {
     }
   },
   computed: {
-    ...mapState('user', ['profile'])
+    ...mapGetters('music', ['currentMusic'])
   },
-  created() {
-    console.log(this.profile)
-    const player = new Howl({
-      src: [
-        'http://m8.music.126.net/20200114003303/72b000217839b3b9bed9e822b2f4df44/ymusic/d93e/90a4/1a13/2030d049dbfa5bff413b66c76574d4c2.flac'
-      ]
-    })
-    this.$set(this, 'player', player)
+  watch: {
+    currentMusic: {
+      handler(val) {
+        this.clear()
+        this.init(val)
+      }
+    }
   },
+  created() {},
   methods: {
+    init(id) {
+      songUrl(id).then(res => {
+        this.player = new Howl({
+          src: [res.data[0].url],
+          // autoplay: true
+        })
+        this.status = 'timeout'
+        this.toggle()
+      })
+    },
+    clear() {
+      if (this.player) {
+        this.player.unload()
+        this.playId = ''
+        this.status = 'timeout'
+      }
+    },
     toggle() {
       console.log(this.status)
       if (this.status === 'play') {
